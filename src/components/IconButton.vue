@@ -1,5 +1,5 @@
 <template>
-  <button class="icon-button">
+  <button class="icon-button" @click="$emit('click')">
     <component :is='icon' :color='color' />
   </button>
 </template>
@@ -7,6 +7,7 @@
 <script>
 import SearchIcon from '@/icons/SearchIcon.vue';
 import BurgerIcon from '@/icons/BurgerIcon.vue';
+import CrossIcon from '@/icons/CrossIcon.vue';
 
 export default {
   name: 'IconButton',
@@ -33,6 +34,9 @@ export default {
         break;
       case 'burger':
         this.icon = BurgerIcon;
+        break;
+      case 'cross':
+        this.icon = CrossIcon;
         break;
       default:
         this.icon = null;

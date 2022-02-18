@@ -34,6 +34,7 @@ export default {
     top: 0;
     right: 0;
     bottom: 0;
+    padding-top: 92px;
     background-color: @bg-primary;
 
     &__button {

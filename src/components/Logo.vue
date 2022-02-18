@@ -1,5 +1,5 @@
 <template>
-  <div class="logo">
+  <a class="logo" href="#" alt="лого">
     <svg width="42" height="40" viewBox="0 0 42 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <!-- eslint-disable max-len -->
       <path
@@ -9,7 +9,7 @@
         :fill="color"
       />
     </svg>
-  </div>
+  </a>
 </template>
 
 <script>
@@ -28,6 +28,7 @@ export default {
   @import "../less/variables.less";
 
   .logo {
+    display: block;
     width: 42px;
     height: 40px;
   }

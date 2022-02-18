@@ -4,7 +4,7 @@
       <logo :color="logoColor"/>
       <div class="page-header__left-part">
         <search class="page-header__search" />
-        <main-menu />
+        <main-menu :menu="menu" :region="region" :phone="phone" />
       </div>
     </container>
   </div>
@@ -13,8 +13,8 @@
 <script>
 import Container from '@/components/Container.vue';
 import Logo from '@/components/Logo.vue';
-import MainMenu from '@/components/MainMenu/index.vue';
-import Search from '@/components/Search/index.vue';
+import MainMenu from '@/components/main-menu/MainMenu.vue';
+import Search from '@/components/search/Search.vue';
 
 export default {
   name: 'PageHeader',
@@ -23,6 +23,20 @@ export default {
     Logo,
     MainMenu,
     Search,
+  },
+  props: {
+    menu: {
+      type: Array,
+      required: true,
+    },
+    region: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
   },
   data: () => ({
     logoColor: '#000000',

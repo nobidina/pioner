@@ -5,15 +5,17 @@
 </template>
 
 <script>
-import SearchIcon from '@/icons/SearchIcon.vue';
 import BurgerIcon from '@/icons/BurgerIcon.vue';
 import CrossIcon from '@/icons/CrossIcon.vue';
+import MapIcon from '@/icons/MapIcon.vue';
+import PhoneIcon from '@/icons/PhoneIcon.vue';
+import SearchIcon from '@/icons/SearchIcon.vue';
 
 export default {
   name: 'IconButton',
   props: {
     variant: {
-      // search, burger
+      // search, burger, map, phone, cross
       type: String,
       required: true,
     },
@@ -38,6 +40,12 @@ export default {
       case 'cross':
         this.icon = CrossIcon;
         break;
+      case 'map':
+        this.icon = MapIcon;
+        break;
+      case 'phone':
+        this.icon = PhoneIcon;
+        break;
       default:
         this.icon = null;
     }
@@ -48,8 +56,10 @@ export default {
 <style scoped lang="less">
   @import "../less/variables.less";
 
-  .search-button {
+  .icon-button {
     width: 40px;
     height: 40px;
+    font-size: 0;
+    line-height: 0;
   }
 </style>

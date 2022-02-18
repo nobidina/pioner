@@ -37,6 +37,5 @@ export default {
   @import "../../less/variables.less";
 
   .search {
-
   }
 </style>

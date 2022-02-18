@@ -34,9 +34,9 @@ export default {
 
     &__link {
       display: block;
-      padding: 20px 24px;
-      font-size: 16px;
-      line-height: 24px;
+      padding: 24px;
+      font-size: 20px;
+      line-height: 32px;
       font-weight: 400;
       color: @color-primary;
       background-color: @bg-primary;

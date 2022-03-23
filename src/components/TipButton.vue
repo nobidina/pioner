@@ -1,9 +1,9 @@
 <template>
   <div class="tip-button" @click="$emit('click')">
+    <icon-button class="tip-button__icon" :variant="variant" :color="color" />
     <p class="tip-button__tip">
       {{ tip }}
     </p>
-    <icon-button :variant="variant" :color="color" />
   </div>
 </template>
 
@@ -40,11 +40,13 @@ export default {
 
   .tip-button {
     display: flex;
-    justify-content: end;
-    align-items: end;
+    align-items: center;
+
+    &__icon {
+      margin-right: 24px;
+    }
 
     &__tip {
-      margin-right: 24px;
       font-weight: 500;
       font-size: 20px;
       line-height: 32px;

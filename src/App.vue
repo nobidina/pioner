@@ -1,15 +1,21 @@
 <template>
   <div id="app">
     <PageHeader :menu="menu" :phone="phone" :region="region" @pick="changeRegion"/>
+    <Hero />
+    <NewProducts />
   </div>
 </template>
 
 <script>
+import Hero from './components/sections/Hero.vue';
+import NewProducts from './components/sections/NewProducts.vue';
 import PageHeader from './components/sections/PageHeader.vue';
 
 export default {
   name: 'App',
   components: {
+    Hero,
+    NewProducts,
     PageHeader,
   },
   data: () => ({

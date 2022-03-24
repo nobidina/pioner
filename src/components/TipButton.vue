@@ -1,9 +1,17 @@
 <template>
   <div class="tip-button" @click="$emit('click')">
-    <icon-button class="tip-button__icon" :variant="variant" :color="color" />
-    <p class="tip-button__tip">
-      {{ tip }}
-    </p>
+    <template v-if="variant === 'phone'">
+      <icon-button class="tip-button__icon" :variant="variant" :color="color" />
+      <a class="tip-button__tip" :href="'tel:' + tip">
+        {{ tip }}
+      </a>
+    </template>
+    <template v-else>
+      <icon-button class="tip-button__icon" :variant="variant" :color="color" />
+      <p class="tip-button__tip">
+        {{ tip }}
+      </p>
+    </template>
   </div>
 </template>
 

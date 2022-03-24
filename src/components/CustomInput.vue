@@ -47,7 +47,7 @@ export default {
       min-height: 63px;
       font-size: 18px;
       color: @color-primary;
-      border: 3px solid @border-primary;
+      border: 4px solid @border-primary;
 
       &:focus {
         border-color: @border-focus;

@@ -14,9 +14,7 @@
         <tip-button class="main-menu__tip-button" :variant='"phone"' :tip="phone" />
       </div>
       </template>
-      <region-picker v-if="isRegionPicker">
-        region
-      </region-picker>
+      <region-picker v-if="isRegionPicker" @pick="emitPick"/>
     </pop-up>
   </div>
 </template>
@@ -68,6 +66,13 @@ export default {
     },
     openRegion() {
       this.isRegionPicker = true;
+    },
+    closeRegion() {
+      this.isRegionPicker = false;
+    },
+    emitPick(value) {
+      this.$emit('pick', value);
+      this.closeRegion();
     },
   },
 };

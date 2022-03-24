@@ -5,6 +5,8 @@
       :class="{'custom-input__input--small': option === 'small'}"
       :placeholder="placeholder"
       type="text"
+      :value="value"
+      @input="$emit('input', $event.target.value)"
     />
   </div>
 </template>
@@ -16,6 +18,7 @@ export default {
   components: {
   },
   data: () => ({
+    value: '',
   }),
   props: {
     option: {

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <PageHeader :menu="menu" :phone="phone" :region="region" />
+    <PageHeader :menu="menu" :phone="phone" :region="region" @pick="changeRegion"/>
   </div>
 </template>
 
@@ -38,6 +38,11 @@ export default {
     region: 'Свердловск',
     phone: '8(800)120-52-50',
   }),
+  methods: {
+    changeRegion(value) {
+      this.region = value;
+    },
+  },
 };
 </script>
 

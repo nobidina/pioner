@@ -1,17 +1,21 @@
 <template>
   <div class="page-header">
-    <container class="page-header__inner">
+    <div class="page-header__inner">
       <logo :color="logoColor"/>
       <div class="page-header__left-part">
         <search class="page-header__search" />
-        <main-menu :menu="menu" :region="region" :phone="phone" />
+        <main-menu
+          :menu="menu"
+          :region="region"
+          :phone="phone"
+          @pick="emitPick"
+        />
       </div>
-    </container>
+    </div>
   </div>
 </template>
 
 <script>
-import Container from '@/components/Container.vue';
 import Logo from '@/components/Logo.vue';
 import MainMenu from '@/components/main-menu/MainMenu.vue';
 import Search from '@/components/search/Search.vue';
@@ -19,7 +23,6 @@ import Search from '@/components/search/Search.vue';
 export default {
   name: 'PageHeader',
   components: {
-    Container,
     Logo,
     MainMenu,
     Search,
@@ -41,11 +44,17 @@ export default {
   data: () => ({
     logoColor: '#000000',
   }),
+  methods: {
+    emitPick(value) {
+      this.$emit('pick', value);
+    },
+  },
 };
 </script>
 
 <style scoped lang="less">
 @import "../../less/variables.less";
+@import "../../less/mixins.less";
 
   .page-header {
     @media @desktop {
@@ -53,6 +62,7 @@ export default {
     }
 
     &__inner {
+      .container();
       display: flex;
       justify-content: space-between;
       padding-top: 32px;

@@ -3,20 +3,35 @@
     <PageHeader :menu="menu" :phone="phone" :region="region" @pick="changeRegion"/>
     <Hero />
     <NewProducts />
+    <Products />
+    <AboutUs />
+    <News />
+    <Subscribtion />
+    <PageFooter />
   </div>
 </template>
 
 <script>
+import AboutUs from './components/sections/AboutUs.vue';
 import Hero from './components/sections/Hero.vue';
 import NewProducts from './components/sections/NewProducts.vue';
+import News from './components/sections/News.vue';
+import PageFooter from './components/sections/PageFooter.vue';
 import PageHeader from './components/sections/PageHeader.vue';
+import Products from './components/sections/Products.vue';
+import Subscribtion from './components/sections/Subscribtion.vue';
 
 export default {
   name: 'App',
   components: {
+    AboutUs,
     Hero,
     NewProducts,
+    News,
+    PageFooter,
     PageHeader,
+    Products,
+    Subscribtion,
   },
   data: () => ({
     menu: [

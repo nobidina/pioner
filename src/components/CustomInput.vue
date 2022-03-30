@@ -45,6 +45,7 @@ export default {
       display: block;
       width: 100%;
       min-height: 63px;
+      padding: 20px 24px;
       font-size: 18px;
       color: @color-primary;
       border: 4px solid @border-primary;

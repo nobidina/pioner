@@ -88,6 +88,7 @@ export default {
         font-size: 18px;
         line-height: 24px;
         color: @color-primary-reverse;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
       }
 
       .card__img {

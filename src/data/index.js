@@ -1,4 +1,6 @@
-import { heroImgMain, newProductsImgs, productsImgs } from './imgs';
+import {
+  heroImgMain, newProductsImgs, productsImgs, aboutUsImgs,
+} from './imgs';
 
 const heroData = {
   title: 'Пионер',
@@ -71,4 +73,12 @@ const productsData = {
   ],
 };
 
-export { heroData, newProductsData, productsData };
+const aboutUsData = {
+  title: 'О компании',
+  text: 'Пионер — это\u00A0научно-производственное предприятие. В\u00A0наших лабораториях мы\u00A0разрабатываем и\u00A0тестируем силовые машины. А\u00A0затем реализуем их\u00A0в\u00A0производстве. Наши представительства можно встретить не\u00A0только в\u00A0России, но\u00A0и\u00A0в\u00A0Республике Беларусь, Казахстане и\u00A0Узбекистание.',
+  gallery: aboutUsImgs,
+};
+
+export {
+  heroData, newProductsData, productsData, aboutUsData,
+};

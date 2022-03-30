@@ -24,5 +24,6 @@ export default {
 @import "../../less/mixins.less";
 
   .subscribtion {
+    margin-bottom: 100px;
   }
 </style>

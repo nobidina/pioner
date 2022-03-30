@@ -5,7 +5,7 @@
         {{ title }}
       </h3>
     </div>
-    <Flicking class="products__swiper" :options="{ circular: true, bound: true }">
+    <Flicking class="products__swiper" :options="{ circular: true }">
       <Card
         v-for="item in products"
         :key="item.id"

@@ -9,10 +9,13 @@
     />
     <Products
       :title="products.title"
-      :text="products.text"
       :products="products.products"
     />
-    <AboutUs />
+    <AboutUs
+      :title="aboutUs.title"
+      :text="aboutUs.text"
+      :gallery="aboutUs.gallery"
+    />
     <News />
     <Subscribtion />
     <PageFooter />
@@ -28,7 +31,9 @@ import PageFooter from './components/sections/PageFooter.vue';
 import PageHeader from './components/sections/PageHeader.vue';
 import Products from './components/sections/Products.vue';
 import Subscribtion from './components/sections/Subscribtion.vue';
-import { heroData, newProductsData, productsData } from './data/index';
+import {
+  heroData, newProductsData, productsData, aboutUsData,
+} from './data/index';
 
 export default {
   name: 'App',
@@ -70,6 +75,7 @@ export default {
     hero: heroData,
     newProducts: newProductsData,
     products: productsData,
+    aboutUs: aboutUsData,
   }),
   methods: {
     changeRegion(value) {

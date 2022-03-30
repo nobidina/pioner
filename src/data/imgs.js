@@ -12,6 +12,12 @@ import product21x from './imgs/product-2@1x.png';
 import product22x from './imgs/product-2@2x.png';
 import product31x from './imgs/product-3@1x.png';
 import product32x from './imgs/product-3@2x.png';
+import aboutUs11x from './imgs/about-us-1@1x.jpg';
+import aboutUs12x from './imgs/about-us-1@2x.jpg';
+import aboutUs21x from './imgs/about-us-2@1x.jpg';
+import aboutUs22x from './imgs/about-us-2@2x.jpg';
+import aboutUs31x from './imgs/about-us-3@1x.jpg';
+import aboutUs32x from './imgs/about-us-3@2x.jpg';
 
 const heroImgMain = {
   src: heroImgMain1x,
@@ -55,4 +61,27 @@ const productsImgs = [
   },
 ];
 
-export { heroImgMain, newProductsImgs, productsImgs };
+const aboutUsImgs = [
+  {
+    id: 1,
+    alt: 'Мужчина работает со станоком',
+    src: aboutUs11x,
+    srcSet: aboutUs12x,
+  },
+  {
+    id: 2,
+    alt: 'Крупное изображение станка',
+    src: aboutUs21x,
+    srcSet: aboutUs22x,
+  },
+  {
+    id: 3,
+    alt: 'Сварка крупным планом',
+    src: aboutUs31x,
+    srcSet: aboutUs32x,
+  },
+];
+
+export {
+  heroImgMain, newProductsImgs, productsImgs, aboutUsImgs,
+};

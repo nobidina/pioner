@@ -2,72 +2,56 @@
   <div class="new-products">
     <div class="new-products__inner">
       <h3 class="new-products__title">
-        Новинки
+        {{ title }}
       </h3>
+      <p class="new-products__text">
+        {{ text }}
+      </p>
     </div>
-    <div class="new-products__cards">
+    <Flicking :options="{ circular: true, bound: true }">
       <Card
         class="new-products__card"
         v-for="item in products"
         :key="item.id"
-        :option="'mini'"
+        :option="'sm'"
         :product="item"
       />
-    </div>
+    </Flicking>
   </div>
 </template>
 
 <script>
+import { Flicking } from '@egjs/vue-flicking';
 import Card from '@/components/Card.vue';
-import { newProducts } from '../../imgs/data';
 
 export default {
   name: 'NewProducts',
   components: {
+    Flicking,
     Card,
   },
   props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    text: {
+      type: String,
+      required: true,
+    },
+    products: {
+      type: Array,
+      required: true,
+    },
   },
   data: () => ({
-    products: [
-      {
-        id: 1,
-        title: 'Электромагнитные расходомеры-счетчики',
-        src: newProducts[0].src,
-        srcSet: newProducts[0].srcSet,
-      },
-      {
-        id: 2,
-        title: 'Манометры цифровые эталонные',
-        src: newProducts[1].src,
-        srcSet: newProducts[1].srcSet,
-      },
-      {
-        id: 3,
-        title: 'Электромагнитные расходомеры-счетчики',
-        src: newProducts[2].src,
-        srcSet: newProducts[2].srcSet,
-      },
-      {
-        id: 4,
-        title: 'Штуцер передвижной',
-        src: newProducts[0].src,
-        srcSet: newProducts[0].srcSet,
-      },
-      {
-        id: 5,
-        title: 'Электромагнитные расходомеры-счетчики',
-        src: newProducts[1].src,
-        srcSet: newProducts[1].srcSet,
-      },
-    ],
   }),
   methods: {
   },
 };
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 @import "../../less/variables.less";
 @import "../../less/mixins.less";
 
@@ -78,11 +62,6 @@ export default {
       width: 100%;
       padding-left: 24px;
       padding-right: 24px;
-    }
-    &__cards {
-      display: flex;
-      padding-right: 24px;
-      padding-left: 24px;
     }
     &__card {
       margin-right: 16px;
@@ -95,5 +74,18 @@ export default {
       margin-bottom: 28px;
       .h3();
     }
+    &__text {
+      margin-bottom: 32px;
+      .p();
+    }
+  }
+
+  .flicking-viewport {
+    box-sizing: border-box;
+    padding: 0 24px;
+  }
+
+  .flicking-camera {
+    display: flex;
   }
 </style>

@@ -1,9 +1,17 @@
 <template>
   <div id="app">
     <PageHeader :menu="menu" :phone="phone" :region="region" @pick="changeRegion"/>
-    <Hero />
-    <NewProducts />
-    <Products />
+    <Hero :title="hero.title" :subtitle="hero.subtitle" :text="hero.text" :main-img="hero.mainImg"/>
+    <NewProducts
+      :title="newProducts.title"
+      :text="newProducts.text"
+      :products="newProducts.products"
+    />
+    <Products
+      :title="products.title"
+      :text="products.text"
+      :products="products.products"
+    />
     <AboutUs />
     <News />
     <Subscribtion />
@@ -20,6 +28,7 @@ import PageFooter from './components/sections/PageFooter.vue';
 import PageHeader from './components/sections/PageHeader.vue';
 import Products from './components/sections/Products.vue';
 import Subscribtion from './components/sections/Subscribtion.vue';
+import { heroData, newProductsData, productsData } from './data/index';
 
 export default {
   name: 'App',
@@ -58,6 +67,9 @@ export default {
     ],
     region: 'Свердловск',
     phone: '8(800)120-52-50',
+    hero: heroData,
+    newProducts: newProductsData,
+    products: productsData,
   }),
   methods: {
     changeRegion(value) {

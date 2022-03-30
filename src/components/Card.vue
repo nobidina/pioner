@@ -1,5 +1,12 @@
 <template>
-  <div class="card" :class="{'card--mini': option === 'mini'}">
+  <div
+    class="card"
+    :class="[
+      {'card--sm': option === 'sm'},
+      {'card--md': option === 'md'},
+      {'card--lg': option === 'lg'}
+    ]"
+  >
     <h4 class="card__title">
       {{ product.title }}
     </h4>
@@ -12,7 +19,7 @@ export default {
   name: 'Card',
   props: {
     option: {
-      // mini,
+      // sm, md, lg
       type: String,
       required: true,
     },
@@ -33,13 +40,16 @@ export default {
     align-items: center;
     flex-shrink: 0;
 
-    &--mini {
+    &--sm {
       box-sizing: border-box;
-      width: 327px;
+      max-width: 327px;
+      min-width: 327px;
       padding: 32px;
       border: 4px solid @border-primary;
 
       .card__title {
+        width: 100%;
+        min-height: 64px;
         margin-bottom: 24px;
         font-family: @font-primary;
         font-weight: 500;
@@ -49,8 +59,41 @@ export default {
       }
 
       .card__img {
+        display: block;
         width: 200px;
         height: 140px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    &--md {
+      position: relative;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 327px;
+      min-height: 440px;
+      background-color: @bg-primary-reverse;
+
+      .card__title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 24px;
+        font-family: @font-primary;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        color: @color-primary-reverse;
+      }
+
+      .card__img {
+        display: block;
+        max-width: 253px;
+        max-height: 200px;
       }
     }
   }

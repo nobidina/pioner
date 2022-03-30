@@ -3,22 +3,21 @@
     <div class="hero__inner">
       <div class="hero__text-block">
         <h1 class="hero__title">
-          Пионер
+          {{ title }}
         </h1>
         <div class="hero__right-part">
           <h2 class="hero__subtitle">
-            Завод cиловых машин
+            {{ subtitle }}
           </h2>
           <p class="hero__text">
-            28 лет в деле.
-            Мы знаем, как&nbsp;автоматизировать технологические процессы вашего предприятия.
+            {{ text }}
           </p>
         </div>
       </div>
       <img
         class="hero__main-img"
-        :src="mainImg.src1x"
-        :srcSet="mainImg.src2x"
+        :src="mainImg.src"
+        :srcSet="mainImg.srcSet"
         :alt="mainImg.alt"
       />
       <Btn :text="'Заказать звонок'" />
@@ -28,7 +27,6 @@
 
 <script>
 import Btn from '@/components/Btn.vue';
-import { heroMain } from '../../imgs/data';
 
 export default {
   name: 'Hero',
@@ -36,9 +34,24 @@ export default {
     Btn,
   },
   props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    subtitle: {
+      type: String,
+      required: true,
+    },
+    text: {
+      type: String,
+      required: true,
+    },
+    mainImg: {
+      type: Object,
+      required: true,
+    },
   },
   data: () => ({
-    mainImg: heroMain,
   }),
   methods: {
   },

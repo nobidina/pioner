@@ -1,5 +1,5 @@
 import {
-  heroImgMain, newProductsImgs, productsImgs, aboutUsImgs,
+  heroImgMain, newProductsImgs, productsImgs, aboutUsImgs, newsImgs,
 } from './imgs';
 
 const heroData = {
@@ -79,6 +79,36 @@ const aboutUsData = {
   gallery: aboutUsImgs,
 };
 
+const newsData = {
+  title: 'Новости',
+  news: [
+    {
+      id: 1,
+      title: 'ПИОНЕР в условиях пандемии',
+      href: '#',
+      src: newsImgs[0].src,
+      srcSet: newsImgs[0].srcSet,
+      isMain: true,
+    },
+    {
+      id: 2,
+      title: 'НПП\u00A0ПИОНЕР подтвердило свои\u00A0компетенции в\u00A0области консультирования и\u00A0изготовления оборудование для\u00A0объектов использования атомной энергии',
+      href: '#',
+      src: newsImgs[1].src,
+      srcSet: newsImgs[1].srcSet,
+      isMain: false,
+    },
+    {
+      id: 3,
+      title: 'Перенос сроковпроведения запланированных работ в\u00A02020\u00A0году',
+      href: '#',
+      src: newsImgs[2].src,
+      srcSet: newsImgs[2].srcSet,
+      isMain: false,
+    },
+  ],
+};
+
 export {
-  heroData, newProductsData, productsData, aboutUsData,
+  heroData, newProductsData, productsData, aboutUsData, newsData,
 };

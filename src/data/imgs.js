@@ -18,6 +18,12 @@ import aboutUs21x from './imgs/about-us-2@1x.jpg';
 import aboutUs22x from './imgs/about-us-2@2x.jpg';
 import aboutUs31x from './imgs/about-us-3@1x.jpg';
 import aboutUs32x from './imgs/about-us-3@2x.jpg';
+import news11x from './imgs/news-1@1x.jpg';
+import news12x from './imgs/news-1@2x.jpg';
+import news21x from './imgs/news-2@1x.jpg';
+import news22x from './imgs/news-2@2x.jpg';
+import news31x from './imgs/news-3@1x.jpg';
+import news32x from './imgs/news-3@2x.jpg';
 
 const heroImgMain = {
   src: heroImgMain1x,
@@ -82,6 +88,24 @@ const aboutUsImgs = [
   },
 ];
 
+const newsImgs = [
+  {
+    src: news11x,
+    srcSet: news12x,
+    alt: 'Сотрудники завода стоят у коробки с масками',
+  },
+  {
+    src: news21x,
+    srcSet: news22x,
+    alt: 'Лестницы производственного цеха',
+  },
+  {
+    src: news31x,
+    srcSet: news32x,
+    alt: 'Коридор вдоль которого стоят большие машины',
+  },
+];
+
 export {
-  heroImgMain, newProductsImgs, productsImgs, aboutUsImgs,
+  heroImgMain, newProductsImgs, productsImgs, aboutUsImgs, newsImgs,
 };

@@ -39,6 +39,7 @@ export default {
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
+    overflow: hidden;
 
     &--sm {
       box-sizing: border-box;
@@ -73,7 +74,6 @@ export default {
       box-sizing: border-box;
       width: 327px;
       min-height: 440px;
-      background-color: @bg-primary-reverse;
 
       .card__title {
         position: absolute;
@@ -92,8 +92,8 @@ export default {
 
       .card__img {
         display: block;
-        max-width: 253px;
-        max-height: 200px;
+        width: 100%;
+        height: auto;
       }
     }
   }

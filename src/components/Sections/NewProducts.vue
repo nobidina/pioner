@@ -8,7 +8,7 @@
         {{ text }}
       </p>
     </div>
-    <Flicking :options="{ circular: true }">
+    <Flicking :options="{ circular: true, bound: true }">
       <Card
         class="new-products__card"
         v-for="item in products"

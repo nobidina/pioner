@@ -5,11 +5,11 @@
         {{ title }}
       </h3>
     </div>
-    <Flicking class="products__swiper" :options="{ circular: true }">
+    <Flicking class="products__swiper" :options="{ circular: true, bound: true }">
       <Card
         v-for="item in products"
         :key="item.id"
-        class="new-products__card"
+        class="products__card"
         :option="'md'"
         :product="item"
       />
@@ -63,6 +63,13 @@ export default {
     }
     &__swiper {
       margin-bottom: 36px;
+    }
+    &__card {
+      margin-right: 16px;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
     &__title {
       margin-bottom: 28px;

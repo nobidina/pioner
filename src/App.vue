@@ -16,7 +16,10 @@
       :text="aboutUs.text"
       :gallery="aboutUs.gallery"
     />
-    <News />
+    <News
+      :title="news.title"
+      :news="news.news"
+    />
     <Subscribtion />
     <PageFooter />
   </div>
@@ -32,7 +35,7 @@ import PageHeader from './components/sections/PageHeader.vue';
 import Products from './components/sections/Products.vue';
 import Subscribtion from './components/sections/Subscribtion.vue';
 import {
-  heroData, newProductsData, productsData, aboutUsData,
+  heroData, newProductsData, productsData, aboutUsData, newsData,
 } from './data/index';
 
 export default {
@@ -76,6 +79,7 @@ export default {
     newProducts: newProductsData,
     products: productsData,
     aboutUs: aboutUsData,
+    news: newsData,
   }),
   methods: {
     changeRegion(value) {

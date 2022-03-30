@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <PageHeader :menu="menu" :phone="phone" :region="region" @pick="changeRegion"/>
+    <PageHeader :menu="menu" :phone="region.phone" :region="region.name" @pick="changeRegion"/>
     <Hero :title="hero.title" :subtitle="hero.subtitle" :text="hero.text" :main-img="hero.mainImg"/>
     <NewProducts
       :title="newProducts.title"
@@ -21,7 +21,11 @@
       :news="news.news"
     />
     <Subscribtion />
-    <PageFooter />
+    <PageFooter
+      :socialMediaList="socialMediaList"
+      :region="region"
+      :footerMenu="footerMenu"
+    />
   </div>
 </template>
 
@@ -35,7 +39,7 @@ import PageHeader from './components/sections/PageHeader.vue';
 import Products from './components/sections/Products.vue';
 import Subscribtion from './components/sections/Subscribtion.vue';
 import {
-  heroData, newProductsData, productsData, aboutUsData, newsData,
+  heroData, newProductsData, productsData, aboutUsData, newsData, socialMediaData,
 } from './data/index';
 
 export default {
@@ -73,17 +77,39 @@ export default {
         href: '#',
       },
     ],
-    region: 'Свердловск',
-    phone: '8(800)120-52-50',
+    region: {
+      name: 'Свердловск',
+      phone: '8(800)120-52-50',
+      schedule: 'ПН-ПТ – 9:00-17:00',
+      email: 'pionerrr@sila.ru',
+    },
+    footerMenu: [
+      {
+        id: '1',
+        text: 'Регионы',
+        href: '#',
+      },
+      {
+        id: '2',
+        text: 'Файлы',
+        href: '#',
+      },
+      {
+        id: '3',
+        text: 'Поддержка',
+        href: '#',
+      },
+    ],
     hero: heroData,
     newProducts: newProductsData,
     products: productsData,
     aboutUs: aboutUsData,
     news: newsData,
+    socialMediaList: socialMediaData,
   }),
   methods: {
     changeRegion(value) {
-      this.region = value;
+      this.region.name = value;
     },
   },
 };

@@ -2,7 +2,7 @@
   <div class="subscribtion">
     <div class="subscribtion__inner">
       <h4 class="subscribtion__title">
-        Хотите быть в курсе событий, подписывайтесь на нашу рассылку.
+        Хотите быть в курсе событий, подписывайтесь на&nbsp;нашу&nbsp;рассылку.
       </h4>
       <CustomInput class="subscribtion__input" :placeholder="'email@gmail.com'" />
       <Btn :text="'Подписаться'"/>
@@ -44,11 +44,11 @@ export default {
 
     &__title {
       .h4();
-      margin-bottom: 28px;
+      margin-bottom: 36px;
     }
 
     &__input {
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
   }
 </style>

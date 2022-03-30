@@ -1,7 +1,7 @@
 <template>
   <div class="page-header">
     <div class="page-header__inner">
-      <logo :color="logoColor"/>
+      <logo :option="'mini'" :color="logoColor"/>
       <div class="page-header__left-part">
         <search class="page-header__search" />
         <main-menu

@@ -1,7 +1,13 @@
 <template>
   <div id="app">
     <PageHeader :menu="menu" :phone="region.phone" :region="region.name" @pick="changeRegion"/>
-    <Hero :title="hero.title" :subtitle="hero.subtitle" :text="hero.text" :main-img="hero.mainImg"/>
+    <Hero
+      :title="hero.title"
+      :subtitle="hero.subtitle"
+      :text="hero.text"
+      :main-img="hero.mainImg"
+      :img="hero.img"
+    />
     <NewProducts
       :title="newProducts.title"
       :text="newProducts.text"
@@ -84,21 +90,57 @@ export default {
       email: 'pionerrr@sila.ru',
     },
     footerMenu: [
-      {
-        id: '1',
-        text: 'Регионы',
-        href: '#',
-      },
-      {
-        id: '2',
-        text: 'Файлы',
-        href: '#',
-      },
-      {
-        id: '3',
-        text: 'Поддержка',
-        href: '#',
-      },
+      [
+        {
+          id: '1',
+          text: 'Продукция',
+          href: '#',
+        },
+        {
+          id: '2',
+          text: 'Услуги',
+          href: '#',
+        },
+        {
+          id: '3',
+          text: 'Каталоги',
+          href: '#',
+        },
+      ],
+      [
+        {
+          id: '4',
+          text: 'Регионы',
+          href: '#',
+        },
+        {
+          id: '5',
+          text: 'Файлы',
+          href: '#',
+        },
+        {
+          id: '6',
+          text: 'Поддержка',
+          href: '#',
+        },
+      ],
+      [
+        {
+          id: '7',
+          text: 'О нас',
+          href: '#',
+        },
+        {
+          id: '8',
+          text: 'Новости',
+          href: '#',
+        },
+        {
+          id: '9',
+          text: 'Контакты',
+          href: '#',
+        },
+      ],
     ],
     hero: heroData,
     newProducts: newProductsData,

@@ -1,5 +1,5 @@
 import {
-  heroImgMain, newProductsImgs, productsImgs, aboutUsImgs, newsImgs,
+  heroImgMain, heroImg, newProductsImgs, productsImgs, aboutUsImgs, newsImgs,
 } from './imgs';
 
 const heroData = {
@@ -7,6 +7,7 @@ const heroData = {
   subtitle: 'Завод cиловых машин',
   text: '28 лет в\u00A0деле. Мы\u00A0знаем, как\u00A0автоматизировать технологические процессы вашего предприятия.',
   mainImg: heroImgMain,
+  img: heroImg,
 };
 
 const newProductsData = {
@@ -18,30 +19,40 @@ const newProductsData = {
       title: 'Электромагнитные расходомеры-счетчики',
       src: newProductsImgs[0].src,
       srcSet: newProductsImgs[0].srcSet,
+      srcDesktop: newProductsImgs[0].src,
+      srcSetDesktop: newProductsImgs[0].srcSet,
     },
     {
       id: 2,
       title: 'Манометры цифровые эталонные',
       src: newProductsImgs[1].src,
       srcSet: newProductsImgs[1].srcSet,
+      srcDesktop: newProductsImgs[1].src,
+      srcSetDesktop: newProductsImgs[1].srcSet,
     },
     {
       id: 3,
       title: 'Электромагнитные расходомеры-счетчики',
       src: newProductsImgs[2].src,
       srcSet: newProductsImgs[2].srcSet,
+      srcDesktop: newProductsImgs[2].src,
+      srcSetDesktop: newProductsImgs[2].srcSet,
     },
     {
       id: 4,
       title: 'Штуцер передвижной',
       src: newProductsImgs[0].src,
       srcSet: newProductsImgs[0].srcSet,
+      srcDesktop: newProductsImgs[0].src,
+      srcSetDesktop: newProductsImgs[0].srcSet,
     },
     {
       id: 5,
       title: 'Электромагнитные расходомеры-счетчики',
       src: newProductsImgs[1].src,
       srcSet: newProductsImgs[1].srcSet,
+      srcDesktop: newProductsImgs[1].src,
+      srcSetDesktop: newProductsImgs[1].srcSet,
     },
   ],
 };
@@ -54,6 +65,8 @@ const productsData = {
       title: 'Сигнализатор уровня и потока термодифференциальный',
       src: productsImgs[0].src,
       srcSet: productsImgs[0].srcSet,
+      srcDesktop: productsImgs[0].srcDesktop,
+      srcSetDesktop: productsImgs[0].srcSetDesktop,
       isMain: true,
     },
     {
@@ -61,6 +74,8 @@ const productsData = {
       title: 'Модульные преобразователи',
       src: productsImgs[1].src,
       srcSet: productsImgs[1].srcSet,
+      srcDesktop: productsImgs[1].srcDesktop,
+      srcSetDesktop: productsImgs[1].srcSetDesktop,
       isMain: false,
     },
     {
@@ -68,6 +83,8 @@ const productsData = {
       title: 'Калибратор давления',
       src: productsImgs[2].src,
       srcSet: productsImgs[2].srcSet,
+      srcDesktop: productsImgs[2].srcDesktop,
+      srcSetDesktop: productsImgs[2].srcSetDesktop,
       isMain: false,
     },
   ],
@@ -88,6 +105,8 @@ const newsData = {
       href: '#',
       src: newsImgs[0].src,
       srcSet: newsImgs[0].srcSet,
+      srcDesktop: newsImgs[0].srcDesktop,
+      srcSetDesktop: newsImgs[0].srcSetDesktop,
       isMain: true,
     },
     {
@@ -96,6 +115,8 @@ const newsData = {
       href: '#',
       src: newsImgs[1].src,
       srcSet: newsImgs[1].srcSet,
+      srcDesktop: newsImgs[1].srcDesktop,
+      srcSetDesktop: newsImgs[1].srcSetDesktop,
       isMain: false,
     },
     {
@@ -104,6 +125,8 @@ const newsData = {
       href: '#',
       src: newsImgs[2].src,
       srcSet: newsImgs[2].srcSet,
+      srcDesktop: newsImgs[2].srcDesktop,
+      srcSetDesktop: newsImgs[2].srcSetDesktop,
       isMain: false,
     },
   ],

@@ -50,8 +50,18 @@ export default {
     display: flex;
     align-items: center;
 
+    &:hover .tip-button__tip {
+      @media @desktop {
+        width: 154px;
+      }
+    }
+
     &__icon {
       margin-right: 24px;
+
+      @media @desktop {
+        margin-right: 8px;
+      }
     }
 
     &__tip {
@@ -59,6 +69,15 @@ export default {
       font-size: 20px;
       line-height: 32px;
       color: @color-primary;
+
+      @media @desktop {
+        transition: width 0.3s;
+        width: 0;
+        max-width: 154px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 </style>

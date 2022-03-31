@@ -25,6 +25,12 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: @color-primary;
+
+  @media @desktop {
+    font-size: 130px;
+    line-height: 100px;
+    letter-spacing: 0.005em;
+  }
 }
 
 .h2() {
@@ -35,6 +41,13 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: @color-primary;
+
+  @media @desktop {
+    width: 308px;
+    font-size: 60px;
+    line-height: 56px;
+    letter-spacing: 0.03em;
+  }
 }
 
 .h3() {
@@ -45,6 +58,28 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: @color-primary;
+
+  @media @desktop {
+    font-size: 110px;
+    line-height: 90px;
+  }
+}
+
+.h3--vertical() {
+  font-family: @font-accent;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: @color-primary;
+
+  @media @desktop {
+    writing-mode: vertical-lr;
+    transform: rotateZ(180deg);
+    font-size: 110px;
+    line-height: 90px;
+  }
 }
 
 .h4() {
@@ -53,13 +88,17 @@
   font-size: 24px;
   line-height: 135%;
   color: @color-primary;
+
+  @media @desktop {
+    font-size: 36px;
+  }
 }
 
 .h5() {
   font-family: @font-primary;
   font-weight: 700;
   font-size: 20px;
-  line-height: 130%;
+  line-height: 135%;
   color: @color-primary-reverse;
 }
 
@@ -69,4 +108,8 @@
   font-size: 18px;
   line-height: 145%;
   color: @color-primary;
+
+  @media @desktop {
+    font-size: 20px;
+  }
 }

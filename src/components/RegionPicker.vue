@@ -1,40 +1,57 @@
 <template>
   <div class="region-picker">
-    <p class="region-picker__title">Начните вводить название вашего региона</p>
-    <custom-input
-      class="region-picker__input"
-      :option="'small'"
-      :placeholder="'Москва'"
-      v-model="region"
+    <template v-if="!isDesktop">
+      <p class="region-picker__title">Начните вводить название вашего региона</p>
+      <custom-input
+        class="region-picker__input"
+        :option="'sm'"
+        :placeholder="'Москва'"
+        v-model="region"
+      />
+      <ul v-if="!tip" class="region-picker__list">
+        <li
+          v-for="item in foundRegions"
+          :key="item.id"
+          class="region-picker__item"
+          @click="$emit('pick', item.name)"
+        >
+          {{ item.name }}
+        </li>
+      </ul>
+      <p class="region-picker__tip" v-if="tip">
+        {{ tip }}
+      </p>
+    </template>
+    <tip-button
+      v-else
+      class="main-menu__tip-button"
+      :variant='"map"'
+      :tip="tip"
     />
-    <ul v-if="!tip" class="region-picker__list">
-      <li
-        v-for="item in foundRegions"
-        :key="item.id"
-        class="region-picker__item"
-        @click="$emit('pick', item.name)"
-      >
-        {{ item.name }}
-      </li>
-    </ul>
-    <p class="region-picker__tip" v-if="tip">
-      {{ tip }}
-    </p>
   </div>
 </template>
 
 <script>
 import CustomInput from '@/components/CustomInput.vue';
+import TipButton from '@/components/TipButton.vue';
+import { mapState } from 'vuex';
 
 export default {
   name: 'RegionPicker',
   components: {
     CustomInput,
+    TipButton,
+  },
+  props: {
+    tip: {
+      type: String,
+      required: false,
+      default: '',
+    },
   },
   data: () => ({
     region: '',
     foundRegions: '',
-    tip: '',
     regions: [
       {
         id: 1,
@@ -167,6 +184,11 @@ export default {
       deep: true,
     },
   },
+  computed: {
+    ...mapState({
+      isDesktop: (state) => state.isDesktop,
+    }),
+  },
   methods: {
     searchRegion() {
       this.tip = '';
@@ -184,6 +206,11 @@ export default {
 
   .region-picker {
     padding: 0 24px 32px 24px;
+
+    @media @desktop {
+      padding: 0;
+    }
+
     &__input {
       margin-bottom: 16px;
     }

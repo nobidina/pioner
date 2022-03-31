@@ -1,6 +1,14 @@
 <template>
   <a class="logo" href="#" alt="лого">
-    <svg v-if="option === 'mini'" width="42" height="40" viewBox="0 0 42 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      class="logo__img  logo__img--mini"
+      v-if="option === 'mini' && !isDesktop"
+      width="42"
+      height="40"
+      viewBox="0 0 42 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <!-- eslint-disable max-len -->
       <path
         fill-rule="evenodd"
@@ -9,7 +17,15 @@
         :fill="color"
       />
     </svg>
-    <svg v-else width="158" height="32" viewBox="0 0 158 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      class="logo__img"
+      v-else
+      width="158"
+      height="32"
+      viewBox="0 0 158 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
@@ -21,6 +37,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'Logo',
   props: {
@@ -35,6 +53,11 @@ export default {
       required: true,
     },
   },
+  computed: {
+    ...mapState({
+      isDesktop: (state) => state.isDesktop,
+    }),
+  },
 };
 </script>
 
@@ -43,7 +66,16 @@ export default {
 
   .logo {
     display: block;
-    width: 42px;
-    height: 40px;
+    line-height: 0;
+
+    &__img {
+      width: 158px;
+      height: 32px;
+
+      &--mini {
+        width: 42px;
+        height: 40px;
+      }
+    }
   }
 </style>

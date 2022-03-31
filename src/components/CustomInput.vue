@@ -2,7 +2,10 @@
   <div class="custom-input">
     <input
       class="custom-input__input"
-      :class="{'custom-input__input--small': option === 'small'}"
+      :class="[
+        {'custom-input__input--sm': option === 'sm'},
+        {'custom-input__input--lg': option === 'lg'}
+      ]"
       :placeholder="placeholder"
       type="text"
       :value="value"
@@ -22,7 +25,7 @@ export default {
   }),
   props: {
     option: {
-      // small
+      // sm, lg
       type: String,
       required: false,
       default: 'default',
@@ -57,9 +60,17 @@ export default {
         border-color: @border-focus;
       }
 
-      &--small {
+      &--sm {
         min-height: 47px;
         padding: 12px 20px;
+      }
+
+      &--lg {
+        @media @desktop {
+          min-height: 80px;
+          padding: 24px;
+          font-size: 24px;
+        }
       }
     }
   }

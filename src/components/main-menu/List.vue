@@ -28,8 +28,33 @@ export default {
     flex-direction: column;
     border-top: 1px solid @border-secondary;
 
+    @media @desktop {
+      flex-direction: row;
+      justify-content: center;
+      border-top: none;
+    }
+
     &__item {
       border-bottom: 1px solid @border-secondary;
+
+      @media @desktop {
+        border-bottom: none;
+        margin-right: 14px;
+        margin-left: 14px;
+      }
+
+      &:first-child {
+        @media @desktop {
+          margin-right: 0;
+        }
+      }
+
+      &:last-child {
+        @media @desktop {
+          border-bottom: none;
+          margin-right: 0;
+        }
+      }
     }
 
     &__link {
@@ -40,6 +65,10 @@ export default {
       font-weight: 400;
       color: @color-primary;
       background-color: @bg-primary;
+
+      @media @desktop {
+        padding: 4px 8px;
+      }
     }
   }
 </style>

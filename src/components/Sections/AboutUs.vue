@@ -60,11 +60,20 @@ export default {
 
   .about-us {
     margin-bottom: 100px;
+
+    @media @desktop {
+      margin-bottom: 192px;
+    }
+
     &__inner {
       box-sizing: border-box;
       width: 100%;
       padding-left: 24px;
       padding-right: 24px;
+
+      @media @desktop {
+        .container();
+      }
     }
     &__item {
       margin-right: 16px;
@@ -81,10 +90,18 @@ export default {
     &__title {
       margin-bottom: 28px;
       .h3();
+
+      @media @desktop {
+        margin-bottom: 48px;
+      }
     }
     &__text {
       margin-bottom: 32px;
       .p();
+
+      @media @desktop {
+        width: 748px;
+      }
     }
   }
 </style>

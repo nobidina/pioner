@@ -1,6 +1,7 @@
 <template>
   <div class="custom-input">
     <input
+      ref="input"
       class="custom-input__input"
       :class="[
         {'custom-input__input--sm': option === 'sm'},
@@ -34,6 +35,20 @@ export default {
       type: String,
       required: false,
       default: '',
+    },
+    isFocus: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
+  watch: {
+    isFocus() {
+      if (this.isFocus) {
+        this.$refs.input.focus();
+      } else {
+        this.isFocus = false;
+      }
     },
   },
 };

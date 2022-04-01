@@ -110,6 +110,7 @@ export default {
         justify-content: flex-start;
         align-items: flex-start;
         width: 100%;
+        margin-bottom: 40px;
       }
     }
     &__text-block-inner {
@@ -121,8 +122,7 @@ export default {
         justify-content: space-between;
         align-items: flex-end;
         width: 100%;
-        margin-left: 132px;
-        margin-bottom: 40px;
+        margin-left: 162px;
       }
     }
     &__title {

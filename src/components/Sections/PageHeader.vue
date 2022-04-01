@@ -21,9 +21,17 @@
         />
         <div class="page-header__right-part">
           <tip-button class="page-header__phone" :variant="'phone'" :tip="phone" />
-          <region-picker class="page-header__region" :tip="region" @pick="emitPick"/>
+          <tip-button
+            class="page-header__region"
+            :variant='"map"'
+            :tip="region"
+            @click="openPopUp"
+          />
           <search class="page-header__search" />
         </div>
+        <pop-up v-if="isPopUp" @close="closePopUp">
+          <region-picker @pick="emitPick" />
+        </pop-up>
       </template>
     </div>
   </div>
@@ -33,6 +41,7 @@
 import TipButton from '@/components/TipButton.vue';
 import Logo from '@/components/Logo.vue';
 import MainMenu from '@/components/main-menu/MainMenu.vue';
+import PopUp from '@/components/PopUp.vue';
 import Search from '@/components/search/Search.vue';
 import RegionPicker from '@/components/RegionPicker.vue';
 import { mapState } from 'vuex';
@@ -43,6 +52,7 @@ export default {
     TipButton,
     Logo,
     MainMenu,
+    PopUp,
     Search,
     RegionPicker,
   },
@@ -62,6 +72,7 @@ export default {
   },
   data: () => ({
     logoColor: '#000000',
+    isPopUp: false,
   }),
   computed: {
     ...mapState({
@@ -71,6 +82,14 @@ export default {
   methods: {
     emitPick(value) {
       this.$emit('pick', value);
+      this.isPopUp = false;
+    },
+
+    openPopUp() {
+      this.isPopUp = true;
+    },
+    closePopUp() {
+      this.isPopUp = false;
     },
   },
 };
@@ -82,6 +101,7 @@ export default {
 
   .page-header {
     @media @desktop {
+      margin-bottom: 24px;
       border-top: 20px solid @border-primary;
     }
 
@@ -95,7 +115,6 @@ export default {
         justify-content: start;
         align-items: center;
         padding-top: 24px;
-        padding-bottom: 24px;
       }
     }
 
@@ -104,7 +123,7 @@ export default {
       margin-left: 24px;
 
       @media @desktop {
-        min-width: 348px;
+        width: 348px;
         flex-shrink: 1;
         margin-left: auto;
         justify-content: end;

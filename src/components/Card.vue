@@ -55,11 +55,28 @@ export default {
   @import "../less/variables.less";
 
   .card {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
     overflow: hidden;
+    transform: translate(0);
+    transition: transform 0.3s;
+
+    &:hover {
+      @media @desktop {
+        transform: translate(-4px, -4px);
+        border-color: #226CA3;
+      }
+    }
+
+    &:active {
+      @media @desktop {
+        transform: translate(4px, 4px);
+        border-color: #0C548A;
+      }
+    }
 
     &--sm {
       box-sizing: border-box;
@@ -71,6 +88,18 @@ export default {
       @media @desktop {
         max-width: 348px;
         min-width: 348px;
+      }
+
+      &:active .card__title{
+        @media @desktop {
+          color: #226CA3;
+        }
+      }
+
+      &:hover .card__title{
+        @media @desktop {
+          color: #226CA3;
+        }
       }
 
       .card__title {

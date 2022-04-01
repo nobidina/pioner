@@ -8,30 +8,47 @@
         {{ text }}
       </p>
     </div>
-    <Flicking class="about-us__swiper" :options="{ circular: true, bound: true }">
-    <div
-      class="about-us__item"
-      v-for="item in gallery"
-      :key="item.id"
-    >
-      <img
-        class="about-us__img"
-        :src="item.src"
-        :srcSet="item.srcSet"
-        :alt="item.alt"
-      />
-    </div>
+    <Flicking v-if="!isDesktop" class="about-us__swiper" :options="{ circular: true, bound: true }">
+      <div
+        class="about-us__item"
+        v-for="item in gallery"
+        :key="item.id"
+      >
+        <img
+          class="about-us__img"
+          :src="item.src"
+          :srcSet="item.srcSet"
+          :alt="item.alt"
+        />
+      </div>
     </Flicking>
+    <Swiper v-else :shift-width="663" :slides="5" :shift="slidePosition" @swipe="moveSlides">
+      <div
+        class="about-us__item"
+        v-for="item in gallery"
+        :key="item.id"
+      >
+        <img
+          class="about-us__img"
+          :src="item.srcDesktop"
+          :srcSet="item.srcSetDesktop"
+          :alt="item.alt"
+        />
+      </div>
+    </Swiper>
   </div>
 </template>
 
 <script>
+import Swiper from '@/components/Swiper.vue';
 import { Flicking } from '@egjs/vue-flicking';
+import { mapState } from 'vuex';
 
 export default {
   name: 'AboutUs',
   components: {
     Flicking,
+    Swiper,
   },
   props: {
     title: {
@@ -48,8 +65,17 @@ export default {
     },
   },
   data: () => ({
+    slidePosition: 0,
   }),
+  computed: {
+    ...mapState({
+      isDesktop: (state) => state.isDesktop,
+    }),
+  },
   methods: {
+    moveSlides(shift) {
+      this.slidePosition = shift;
+    },
   },
 };
 </script>
@@ -78,6 +104,10 @@ export default {
     &__item {
       margin-right: 16px;
 
+      @media @desktop {
+        margin-right: 32px;
+      }
+
       &:last-child {
         margin-right: 0;
       }
@@ -86,6 +116,11 @@ export default {
       display: block;
       width: 327px;
       height: 240px;
+
+      @media @desktop {
+        width: 631px;
+        height: 355px;
+      }
     }
     &__title {
       margin-bottom: 28px;

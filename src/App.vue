@@ -161,6 +161,10 @@ export default {
 @import "less/reset.less";
 @import "less/variables.less";
 
+html {
+  scroll-behavior: smooth;
+}
+
 #app {
   width: 100%;
   height: 100%;

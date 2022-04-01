@@ -72,6 +72,18 @@ export default {
       width: 158px;
       height: 32px;
 
+      &:hover path {
+        @media @desktop {
+          fill: #226CA3;
+        }
+      }
+
+      &:active path {
+        @media @desktop {
+          fill: #0C548A;
+        }
+      }
+
       &--mini {
         width: 42px;
         height: 40px;

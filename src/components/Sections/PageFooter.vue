@@ -161,6 +161,12 @@ export default {
       @media @desktop {
         margin-bottom: 0;
       }
+
+      &:hover svg path{
+        @media @desktop {
+          fill: red;
+        }
+      }
     }
 
     &__title {

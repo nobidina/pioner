@@ -49,6 +49,7 @@ export default {
   .tip-button {
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     &:hover .tip-button__tip {
       @media @desktop {
@@ -69,6 +70,7 @@ export default {
       font-size: 20px;
       line-height: 32px;
       color: @color-primary;
+      cursor: pointer;
 
       @media @desktop {
         transition: width 0.3s;

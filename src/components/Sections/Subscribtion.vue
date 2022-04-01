@@ -1,7 +1,7 @@
 <template>
   <div class="subscribtion">
     <div class="subscribtion__inner">
-      <label class="subscribtion__title-wrapper">
+      <div class="subscribtion__title-wrapper" @click="switchFocus">
         <h4 class="subscribtion__title">
           Хотите быть в курсе событий, подписывайтесь на&nbsp;нашу&nbsp;рассылку.
         </h4>
@@ -11,8 +11,14 @@
             <path d="M13.5858 69.4142C14.3668 70.1953 15.6332 70.1953 16.4142 69.4142L29.1421 56.6863C29.9232 55.9052 29.9232 54.6389 29.1421 53.8579C28.3611 53.0768 27.0948 53.0768 26.3137 53.8579L15 65.1716L3.68629 53.8579C2.90524 53.0768 1.63891 53.0768 0.857864 53.8579C0.0768156 54.6389 0.0768156 55.9052 0.857864 56.6863L13.5858 69.4142ZM13 0L13 68H17L17 0L13 0Z" fill="black"/>
           </svg>
         </button>
-      </label>
-      <CustomInput class="subscribtion__input" :option="'lg'" :placeholder="'email@gmail.com'" />
+      </div>
+      <CustomInput
+        ref="input"
+        class="subscribtion__input"
+        :is-focus="isFocus"
+        :option="'lg'"
+        :placeholder="'email@gmail.com'"
+      />
       <Btn :text="'Подписаться'" :option="'lg'"/>
     </div>
   </div>
@@ -32,6 +38,7 @@ export default {
   props: {
   },
   data: () => ({
+    isFocus: false,
   }),
   computed: {
     ...mapState({
@@ -39,6 +46,11 @@ export default {
     }),
   },
   methods: {
+    switchFocus() {
+      const scroll = document.documentElement.scrollTop;
+      window.scrollTo(0, scroll + 150);
+      this.isFocus = !this.isFocus;
+    },
   },
 };
 </script>
@@ -68,6 +80,32 @@ export default {
     &__title-wrapper {
       display: flex;
       margin-bottom: 36px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+
+      &:hover .subscribtion__btn-arrow svg path{
+        @media @desktop {
+          fill: #226CA3;
+        }
+      }
+
+      &:hover .subscribtion__title{
+        @media @desktop {
+          color: #226CA3;
+        }
+      }
+
+      &:active .subscribtion__btn-arrow svg path{
+        @media @desktop {
+          fill: #59ABE8;
+        }
+      }
+
+      &:active .subscribtion__title{
+        @media @desktop {
+          color: #59ABE8;
+        }
+      }
     }
 
     &__title {

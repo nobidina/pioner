@@ -26,6 +26,20 @@ import aboutUs21x from './imgs/about-us-2@1x.jpg';
 import aboutUs22x from './imgs/about-us-2@2x.jpg';
 import aboutUs31x from './imgs/about-us-3@1x.jpg';
 import aboutUs32x from './imgs/about-us-3@2x.jpg';
+import aboutUs41x from './imgs/about-us-4@1x.jpg';
+import aboutUs42x from './imgs/about-us-4@2x.jpg';
+import aboutUs51x from './imgs/about-us-5@1x.jpg';
+import aboutUs52x from './imgs/about-us-5@2x.jpg';
+import aboutUsDesktop11x from './imgs/about-us-desktop-1@1x.jpg';
+import aboutUsDesktop12x from './imgs/about-us-desktop-1@2x.jpg';
+import aboutUsDesktop21x from './imgs/about-us-desktop-2@1x.jpg';
+import aboutUsDesktop22x from './imgs/about-us-desktop-2@2x.jpg';
+import aboutUsDesktop31x from './imgs/about-us-desktop-3@1x.jpg';
+import aboutUsDesktop32x from './imgs/about-us-desktop-3@2x.jpg';
+import aboutUsDesktop41x from './imgs/about-us-desktop-4@1x.jpg';
+import aboutUsDesktop42x from './imgs/about-us-desktop-4@2x.jpg';
+import aboutUsDesktop51x from './imgs/about-us-desktop-5@1x.jpg';
+import aboutUsDesktop52x from './imgs/about-us-desktop-5@2x.jpg';
 import news11x from './imgs/news-1@1x.jpg';
 import news12x from './imgs/news-1@2x.jpg';
 import news21x from './imgs/news-2@1x.jpg';
@@ -102,21 +116,43 @@ const productsImgs = [
 const aboutUsImgs = [
   {
     id: 1,
-    alt: 'Мужчина работает со станоком',
+    alt: 'Цех',
     src: aboutUs11x,
     srcSet: aboutUs12x,
+    srcDesktop: aboutUsDesktop11x,
+    srcSetDesktop: aboutUsDesktop12x,
   },
   {
     id: 2,
-    alt: 'Крупное изображение станка',
+    alt: 'Мужчина работает со станоком',
     src: aboutUs21x,
     srcSet: aboutUs22x,
+    srcDesktop: aboutUsDesktop21x,
+    srcSetDesktop: aboutUsDesktop22x,
   },
   {
     id: 3,
-    alt: 'Сварка крупным планом',
+    alt: 'Крупное изображение станка',
     src: aboutUs31x,
     srcSet: aboutUs32x,
+    srcDesktop: aboutUsDesktop31x,
+    srcSetDesktop: aboutUsDesktop32x,
+  },
+  {
+    id: 4,
+    alt: 'Сварка крупным планом',
+    src: aboutUs41x,
+    srcSet: aboutUs42x,
+    srcDesktop: aboutUsDesktop41x,
+    srcSetDesktop: aboutUsDesktop42x,
+  },
+  {
+    id: 5,
+    alt: 'Сварка вид сбоку',
+    src: aboutUs51x,
+    srcSet: aboutUs52x,
+    srcDesktop: aboutUsDesktop51x,
+    srcSetDesktop: aboutUsDesktop52x,
   },
 ];
 

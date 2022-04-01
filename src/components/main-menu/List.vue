@@ -69,6 +69,18 @@ export default {
       @media @desktop {
         padding: 4px 8px;
       }
+
+      &:hover {
+        @media @desktop {
+          color: #226CA3;
+        }
+      }
+
+      &:active {
+        @media @desktop {
+          color: #0C548A;
+        }
+      }
     }
   }
 </style>

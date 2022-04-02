@@ -100,7 +100,6 @@ export default {
     }
     &__text-block {
       display: flex;
-      justify-content: space-between;
       margin-bottom: 36px;
       @media @desktop {
         justify-content: flex-start;
@@ -131,13 +130,16 @@ export default {
     }
     &__subtitle {
       .h2();
+      max-width: 200px;
       margin-bottom: 32px;
 
       @media @desktop {
+        max-width: 100%;
         margin-bottom: 0;
       }
     }
     &__text {
+      max-width: 235px;
       font-family: @font-primary;
       font-weight: 400;
       font-size: 18px;
@@ -145,6 +147,7 @@ export default {
       color: @color-primary;
 
       @media @desktop {
+        max-width: 532px;
         width: 532px;
         font-size: 24px;
         line-height: 130%;

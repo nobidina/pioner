@@ -1,10 +1,10 @@
 <template>
   <div class="main-menu">
     <template v-if="!isDesktop">
-      <icon-button :variant='"burger"' :color="iconColor" @click='openPopUp()'/>
+      <icon-button :variant='"burger"' :color="'#000000'" @click='openPopUp()'/>
       <pop-up class="main-menu__pop-up" v-if='isPopUp' @close='closePopUp()'>
         <template v-if="!isRegionPicker">
-        <list :menu="menu" />
+        <list :list="menu" />
         <div class="main-menu__bottom-part">
           <tip-button
             class="main-menu__tip-button"

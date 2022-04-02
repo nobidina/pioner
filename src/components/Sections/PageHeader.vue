@@ -1,7 +1,7 @@
 <template>
   <div class="page-header">
     <div class="page-header__inner">
-      <logo class="page-header__logo" :option="'mini'" :color="logoColor"/>
+      <logo class="page-header__logo" :option="'mini'" :color="'primary'"/>
       <template v-if="!isDesktop">
         <div class="page-header__right-part">
           <search class="page-header__search" />
@@ -71,7 +71,6 @@ export default {
     },
   },
   data: () => ({
-    logoColor: '#000000',
     isPopUp: false,
   }),
   computed: {

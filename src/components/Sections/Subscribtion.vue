@@ -35,8 +35,6 @@ export default {
     Btn,
     CustomInput,
   },
-  props: {
-  },
   data: () => ({
     isFocus: false,
   }),
@@ -85,25 +83,25 @@ export default {
 
       &:hover .subscribtion__btn-arrow svg path{
         @media @desktop {
-          fill: #226CA3;
+          fill: @hover-color;
         }
       }
 
       &:hover .subscribtion__title{
         @media @desktop {
-          color: #226CA3;
+          color: @hover-color;
         }
       }
 
       &:active .subscribtion__btn-arrow svg path{
         @media @desktop {
-          fill: #59ABE8;
+          fill: @active-color;
         }
       }
 
       &:active .subscribtion__title{
         @media @desktop {
-          color: #59ABE8;
+          color: @active-color;
         }
       }
     }

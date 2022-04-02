@@ -46,20 +46,20 @@ export default {
     @media @desktop {
       transition:  0.2s transform, 0.2s box-shadow;
       transform: translate(0);
-      box-shadow: 4px 4px 0px #000000;
+      box-shadow: 4px 4px 0px @shadow-color;
     }
 
     &:hover {
       @media @desktop {
         transform: translate(-4px, -4px);
-        box-shadow: 8px 8px 0px #000000;
+        box-shadow: 8px 8px 0px @hover-shadow-color;
       }
     }
 
     &:active {
       @media @desktop {
         transform: translate(4px, 4px);
-        box-shadow: 0px 0px 0px #000000;
+        box-shadow: 0px 0px 0px @hover-shadow-color;
       }
     }
 

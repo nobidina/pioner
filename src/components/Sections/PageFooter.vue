@@ -2,7 +2,7 @@
   <div class="page-footer">
     <div class="page-footer__inner">
       <div class="page-footer__top">
-        <logo class="page-footer__logo" :color="logoColor"/>
+        <logo class="page-footer__logo" :color="'primary-reversed'"/>
         <SocialMedia :list="socialMediaList" />
       </div>
       <div class="page-footer__bottom">
@@ -88,11 +88,6 @@ export default {
       default: null,
     },
   },
-  data: () => ({
-    logoColor: '#ffffff',
-  }),
-  methods: {
-  },
 };
 </script>
 
@@ -161,12 +156,6 @@ export default {
       @media @desktop {
         margin-bottom: 0;
       }
-
-      &:hover svg path{
-        @media @desktop {
-          fill: red;
-        }
-      }
     }
 
     &__title {
@@ -221,6 +210,7 @@ export default {
     }
 
     &__item {
+      cursor: pointer;
       margin-bottom: 12px;
       font-size: 20px;
       line-height: 135%;
@@ -228,6 +218,18 @@ export default {
 
       &:last-child {
         margin-bottom: 0;
+      }
+
+      &:hover {
+        @media @desktop {
+          color: @hover-color;
+        }
+      }
+
+      &:active {
+        @media @desktop {
+          color: @active-color;
+        }
       }
     }
   }

@@ -1,7 +1,7 @@
 <template>
   <div class="search">
     <template v-if="!isDesktop">
-      <icon-button :variant='"search"' :color="iconColor" @click='openPopUp()'/>
+      <icon-button :variant='"search"' :color="'#000000'" @click='openPopUp()'/>
       <pop-up v-if='isPopUp' @close='closePopUp()'>
         search-field
       </pop-up>
@@ -27,7 +27,6 @@
 import IconButton from '@/components/IconButton.vue';
 import PopUp from '@/components/PopUp.vue';
 import { mapState } from 'vuex';
-import colors from '../../helpers/colors';
 
 export default {
   name: 'Search',
@@ -36,7 +35,6 @@ export default {
     PopUp,
   },
   data: () => ({
-    iconColor: colors.icons.search,
     isPopUp: false,
   }),
   computed: {

@@ -2,16 +2,16 @@
   <ul class="social-media">
     <li v-for="item in list" :key="item.id" class="social-media__item">
       <a v-if="item.id === 'facebook'" class="social-media__link" :href="item.link">
-        <FacebookIcon :color="'#ffffff'" />
+        <FacebookIcon class="social-media__icon" :color="'#ffffff'" />
       </a>
       <a v-if="item.id === 'telegram'" class="social-media__link" :href="item.link">
-        <TelegramIcon :color="'#ffffff'"/>
+        <TelegramIcon class="social-media__icon" :color="'#ffffff'"/>
       </a>
       <a v-if="item.id === 'instagram'" class="social-media__link" :href="item.link">
-        <InstagramIcon :color="'#ffffff'"/>
+        <InstagramIcon class="social-media__icon" :color="'#ffffff'"/>
       </a>
       <a v-if="item.id === 'vk'" class="social-media__link" :href="item.link">
-        <VKIcon :color="'#ffffff'"/>
+        <VKIcon class="social-media__icon" :color="'#ffffff'"/>
       </a>
     </li>
   </ul>
@@ -55,9 +55,16 @@ export default {
     }
 
     &__link {
+      cursor: pointer;
       display: block;
       width: 40px;
       height: 40px;
+
+      & svg path {
+        @media @desktop {
+          fill: @hover-color;
+        }
+      }
     }
   }
 </style>

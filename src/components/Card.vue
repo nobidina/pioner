@@ -67,14 +67,14 @@ export default {
     &:hover {
       @media @desktop {
         transform: translate(-4px, -4px);
-        border-color: #226CA3;
+        border-color: @hover-color;
       }
     }
 
     &:active {
       @media @desktop {
         transform: translate(4px, 4px);
-        border-color: #0C548A;
+        border-color: @active-color;
       }
     }
 
@@ -90,15 +90,15 @@ export default {
         min-width: 348px;
       }
 
-      &:active .card__title{
+      &:hover .card__title{
         @media @desktop {
-          color: #226CA3;
+          color: @hover-color;
         }
       }
 
-      &:hover .card__title{
+      &:active .card__title{
         @media @desktop {
-          color: #226CA3;
+          color: @active-color;
         }
       }
 

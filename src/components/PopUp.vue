@@ -4,7 +4,7 @@
       <icon-button
         class="pop-up__button"
         :variant='"cross"'
-        :color="iconColor"
+        :color="'#000000'"
         @click="$emit('close')"
       />
       <slot />
@@ -14,16 +14,12 @@
 
 <script>
 import IconButton from '@/components/IconButton.vue';
-import colors from '@/helpers/colors';
 
 export default {
   name: 'PopUp',
   components: {
     IconButton,
   },
-  data: () => ({
-    iconColor: colors.icons.cross,
-  }),
 };
 </script>
 
@@ -61,12 +57,12 @@ export default {
         width: 918px;
         height: 80vh;
         padding: 40px;
-        border: 4px solid #000000;
-        box-shadow: 0 0 0 #226CA3;
+        border: 4px solid @border-primary;
+        box-shadow: 0 0 0 @hover-color;
         transition: transform 0.3s, box-shadow 0.3s;
         &:hover {
           transform: translate(calc(-50% - 16px), calc(-50% - 16px));
-          box-shadow: 16px 16px 0 #226CA3;
+          box-shadow: 16px 16px 0 @hover-color;
         }
       }
     }

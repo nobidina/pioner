@@ -1,13 +1,13 @@
 <template>
   <div class="tip-button" @click="$emit('click')">
     <template v-if="variant === 'phone'">
-      <icon-button class="tip-button__icon" :variant="variant" :color="color" />
+      <icon-button class="tip-button__icon" :variant="variant" :color="'#000000'" />
       <a class="tip-button__tip" :href="'tel:' + tip">
         {{ tip }}
       </a>
     </template>
     <template v-else>
-      <icon-button class="tip-button__icon" :variant="variant" :color="color" />
+      <icon-button class="tip-button__icon" :variant="variant" :color="'#000000'" />
       <p class="tip-button__tip">
         {{ tip }}
       </p>
@@ -18,7 +18,6 @@
 <script>
 
 import IconButton from '@/components/IconButton.vue';
-import colors from '../helpers/colors';
 
 export default {
   name: 'TipButton',
@@ -36,10 +35,6 @@ export default {
       required: true,
     },
   },
-
-  data: () => ({
-    color: colors.icons.tipButton,
-  }),
 };
 </script>
 

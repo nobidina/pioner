@@ -1,6 +1,6 @@
 <template>
   <ul class="list">
-    <li class="list__item" v-for="item in menu" :key="item.id">
+    <li class="list__item" v-for="item in list" :key="item.id">
       <a class="list__link" :href="item.href">
         {{ item.text }}
       </a>
@@ -12,7 +12,7 @@
 export default {
   name: 'List',
   props: {
-    menu: {
+    list: {
       type: Array,
       required: true,
     },
@@ -38,9 +38,9 @@ export default {
       border-bottom: 1px solid @border-secondary;
 
       @media @desktop {
-        border-bottom: none;
         margin-right: 14px;
         margin-left: 14px;
+        border-bottom: none;
       }
 
       &:first-child {
@@ -51,8 +51,8 @@ export default {
 
       &:last-child {
         @media @desktop {
-          border-bottom: none;
           margin-right: 0;
+          border-bottom: none;
         }
       }
     }
@@ -72,13 +72,13 @@ export default {
 
       &:hover {
         @media @desktop {
-          color: #226CA3;
+          color: @hover-color;
         }
       }
 
       &:active {
         @media @desktop {
-          color: #0C548A;
+          color: @active-color;
         }
       }
     }

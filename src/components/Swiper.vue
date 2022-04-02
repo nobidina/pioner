@@ -100,13 +100,13 @@ export default {
 
       &:hover svg path{
         @media @desktop {
-          fill: #226CA3;
+          fill: @hover-color;
         }
       }
 
       &:active svg path{
         @media @desktop {
-          fill: #59ABE8;
+          fill: @active-color;
         }
       }
     }

@@ -18,7 +18,7 @@
         <region-picker v-if="isRegionPicker" @pick="emitPick"/>
       </pop-up>
     </template>
-    <list v-else :menu="menu" />
+    <list v-else :list="menu" />
   </div>
 </template>
 
@@ -30,7 +30,6 @@ import PopUp from '@/components/PopUp.vue';
 import RegionPicker from '@/components/RegionPicker.vue';
 import TipButton from '@/components/TipButton.vue';
 import { mapState } from 'vuex';
-import colors from '../../helpers/colors';
 
 export default {
   name: 'MainMenu',
@@ -59,7 +58,6 @@ export default {
   },
   data: () => ({
     isPopUp: false,
-    iconColor: colors.icons.menu,
     isRegionPicker: false,
   }),
   computed: {

@@ -17,7 +17,14 @@
         :product="item"
       />
     </Flicking>
-    <Swiper v-else :shift-width="380" :slides="5" :shift="slidePosition" @swipe="moveSlides">
+    <Swiper
+      v-else
+      class="new-products__swiper"
+      :shift-width="380"
+      :slides="5"
+      :shift="slidePosition"
+      @swipe="moveSlides"
+    >
       <Card
         class="swiper__slide  new-products__card"
         v-for="item in products"
@@ -90,6 +97,11 @@ export default {
 
       @media @desktop {
         .container();
+      }
+    }
+    &__swiper {
+      @media @desktop {
+        padding-bottom: 4px;
       }
     }
     &__card {

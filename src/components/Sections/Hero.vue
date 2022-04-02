@@ -68,14 +68,10 @@ export default {
       required: true,
     },
   },
-  data: () => ({
-  }),
   computed: {
     ...mapState({
       isDesktop: (state) => state.isDesktop,
     }),
-  },
-  methods: {
   },
 };
 </script>

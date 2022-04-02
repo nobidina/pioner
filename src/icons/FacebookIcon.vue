@@ -24,5 +24,17 @@ export default {
   .facebook-icon {
     width: 40px;
     height: 40px;
+
+    &:hover path {
+      @media @desktop {
+        fill: @hover-color;
+      }
+    }
+
+    &:active path {
+      @media @desktop {
+        fill: @active-color;
+      }
+    }
   }
 </style>

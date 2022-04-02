@@ -19,8 +19,6 @@
 
 export default {
   name: 'CustomInput',
-  components: {
-  },
   data: () => ({
     value: '',
   }),

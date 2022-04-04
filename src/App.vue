@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <PageHeader :menu="menu" :phone="region.phone" :region="region.name" @pick="changeRegion"/>
+    <PageHeader
+      :menu="menu"
+      :phone="region.phone"
+      :region="region.name"
+      @pick="changeRegion"
+    />
     <Hero
       :title="hero.title"
       :subtitle="hero.subtitle"

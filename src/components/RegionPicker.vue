@@ -175,9 +175,12 @@ export default {
   methods: {
     searchRegion() {
       this.tip = '';
-      this.foundRegions = this.regions.filter((item) => item.name.startsWith(this.region));
+      const region = this.region.toLowerCase();
+      // eslint-disable-next-line max-len
+      const foundRegions = this.regions.filter((item) => item.name.toLowerCase().startsWith(region));
+      this.foundRegions = foundRegions;
       if (this.foundRegions.length === 0) {
-        this.tip = 'Ничего не нашлось. Попробуйте вести город с большой буквы. Например: Москва';
+        this.tip = 'Кажется у нас нет представительства в этом городе. Попробуйте другой город. Например: Москва.';
       }
     },
   },
@@ -233,7 +236,7 @@ export default {
     }
 
     &__tip {
-      line-height: 130%;
+      line-height: 135%;
       color: @color-error;
     }
   }
